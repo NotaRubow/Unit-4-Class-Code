@@ -1,6 +1,6 @@
 package homework2;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Main {
 
@@ -25,10 +25,43 @@ public class Main {
     }
 
     public static void vowelCounter(String str) {
-
+        int numA, numE, numI, numO, numU;
+        numA = numE = numI = numO = numU = 0;
+        char current;
+        for (int i = 0; i < str.length(); i++) {
+            current = str.toLowerCase().charAt(i);
+            switch (current){
+                case 'a': numA++;
+                    break;
+                case 'e': numE++;
+                    break;
+                case 'i': numI++;
+                    break;
+                case 'o': numO++;
+                    break;
+                case 'u': numU++;
+                    break;
+            }
+        }
+        System.out.printf("Number of a's: %d\nNumber of e's: %d\nNumber of i's: %d\nNumber of o's: %d\nNumber of u's: %d", numA, numE, numI, numO, numU);
+        System.out.println();
     }
 
-    public static void palindromeChecker(String str) {
 
+    public static void palindromeChecker(String str) { 
+        String ori = str;
+        String reversed="";
+        String  original= ori.toLowerCase();
+        for (int i=0; i<original.length(); i++){
+ 
+            String single = original.substring(i,i+1);
+            reversed = single + reversed;
+        }
+        if (original.equals(reversed)){
+            System.out.println(str + " is a palindrome");
+        }
+        else {
+            System.out.println(str + " is not a palindrome");
+        }
     }
 }

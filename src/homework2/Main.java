@@ -52,16 +52,29 @@ public class Main {
         String ori = str;
         String reversed="";
         String  original= ori.toLowerCase();
+        for (int i = 0; i < str.length(); i++) {
+            char single = original.charAt(i);
+            if ((single < 48) || (single > 90 && single < 97) || (single > 122)) {
+                System.out.println("Error: Invalid character detected in " + str);
+                return; 
+            }
+        }
+            
         for (int i=0; i<original.length(); i++){
  
             String single = original.substring(i,i+1);
             reversed = single + reversed;
         }
-        if (original.equals(reversed)){
+        if (original.equals(reversed))
+        {
             System.out.println(str + " is a palindrome");
         }
-        else {
+        else 
+        {
             System.out.println(str + " is not a palindrome");
         }
+            
     }
+        
+        
 }
